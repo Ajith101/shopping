@@ -20,7 +20,7 @@ const CartProducts = ({ item }) => {
   });
 
   return (
-    <div className="md:w-[90%] w-full px-2 md:px-10 flex flex-wrap gap-8 justify-between border-b-[1px] py-3">
+    <div className="md:w-[90%] w-full px-2 md:px-10 flex gap-8 justify-between border-b-[1px] py-3">
       <div className="flex gap-3 md:w-[50%]">
         <div className="w-[100px] h-[100px] rounded-md overflow-hidden gap-5">
           <img
