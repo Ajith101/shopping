@@ -66,8 +66,8 @@ const CartPage = () => {
                   <div className="flex border-b-[1px] justify-between p-2 items-center text-lg font-semibold">
                     <h1>Total price</h1>
                     <h1>
-                      {"$ "}
-                      {displatTotalRate}
+                      {"₹ "}
+                      {displatTotalRate * 81.97}
                     </h1>
                   </div>
                   <div className="flex border-b-[1px] justify-between p-2 items-center text-base">

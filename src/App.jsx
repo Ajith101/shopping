@@ -7,6 +7,8 @@ import MainPage from "./MainPage";
 import CartPage from "./components/cart/CartPage";
 import { Provider } from "react-redux";
 import { store } from "./store/store";
+import CategoryWise from "./components/categoryList/CategoryWise";
+import ItemDetails from "./components/productsCards/ItemDetails";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +18,14 @@ const router = createBrowserRouter([
   {
     path: "/cart",
     element: <CartPage />,
+  },
+  {
+    path: "/category/:id",
+    element: <CategoryWise />,
+  },
+  {
+    path: "/itemdetails/:id",
+    element: <ItemDetails />,
   },
 ]);
 

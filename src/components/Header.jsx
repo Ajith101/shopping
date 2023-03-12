@@ -9,10 +9,7 @@ const Header = () => {
   return (
     <div className="bg-blue-500 px-10 flex justify-between items-center fixed z-50 text-white w-full py-7">
       <div className="flex gap-4 justify-center items-center">
-        <NavLink
-          to="/"
-          className={({ isActive }) => (isActive ? "underline" : "")}
-        >
+        <NavLink to="/" className={({ isActive }) => (isActive ? "" : "")}>
           <h1 className="text-3xl">Shopping App</h1>
         </NavLink>
 

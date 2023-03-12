@@ -1,8 +1,10 @@
 import React from "react";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { addToCart, AddQty } from "../../features/cartSlice";
 
 const ProductsCards = ({ item }) => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   function addtoCartItemes(item, id) {
@@ -12,7 +14,10 @@ const ProductsCards = ({ item }) => {
 
   return (
     <div className="bg-white rounded-2xl flex p-2 flex-col justify-between shadow-2xl gap-3 h-auto">
-      <div className="w-full h-[300px] relative rounded-2xl overflow-hidden">
+      <div
+        onClick={() => navigate(`/itemdetails/${item.id}`)}
+        className="w-full h-[300px] relative rounded-2xl overflow-hidden"
+      >
         <img
           className="w-full h-[90%] object-cover"
           src={item.thumbnail}
@@ -24,14 +29,17 @@ const ProductsCards = ({ item }) => {
         </span>
       </div>
 
-      <div className="flex flex-col">
+      <div
+        onClick={() => navigate(`/itemdetails/${item.id}`)}
+        className="flex flex-col"
+      >
         <h1 className="text-xl font-semibold">{item.title}</h1>
         <h1>{item.stock}</h1>
       </div>
       <div className="flex gap-4 items-center">
         <h3>Price:</h3>
         <h1 className="text-xl font-semibold">
-          {"$"} {item.price}
+          {"₹"} {item.price * 81.97}
         </h1>
       </div>
       <div className="">

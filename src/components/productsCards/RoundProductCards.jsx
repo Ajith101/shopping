@@ -1,7 +1,9 @@
 import React, { useContext } from "react";
 import { AllProductsList } from "../../globalDatas/GlobalDatas";
+import { useNavigate } from "react-router-dom";
 
 const RoundProductCards = ({ item }) => {
+  const navigate = useNavigate();
   const { datass } = useContext(AllProductsList);
 
   const fliternames = datass.filter((itemes) => {
@@ -14,7 +16,10 @@ const RoundProductCards = ({ item }) => {
 
   return (
     <>
-      <div className="bg-white rounded-2xl flex p-2 flex-col shadow-2xl gap-3 h-auto">
+      <div
+        onClick={() => navigate(`/category/${item}`)}
+        className="bg-white rounded-2xl flex p-2 flex-col shadow-2xl gap-3 h-auto"
+      >
         <div className="w-full h-[250px] relative rounded-2xl overflow-hidden">
           <img
             className="w-full h-[80%] object-cover"
