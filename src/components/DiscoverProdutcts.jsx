@@ -15,7 +15,7 @@ const DiscoverProdutcts = () => {
         </div>
         <div className="flex justify-center items-center">
           {" "}
-          <div className="grid w-[96%] md:w-[90%] lg:w-[60%] gap-5 grid-cols-2 md:grid-cols-4">
+          <div className="grid w-[98%] md:w-[90%] lg:w-[60%] gap-5 grid-cols-2 md:grid-cols-4">
             <CategoryNames />
           </div>
         </div>

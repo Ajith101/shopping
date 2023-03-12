@@ -13,17 +13,17 @@ const ProductsCards = ({ item }) => {
   }
 
   return (
-    <div className="bg-white rounded-2xl flex p-2 flex-col justify-between shadow-2xl gap-3 h-auto">
+    <div className="bg-white rounded-2xl flex flex-col justify-between shadow-2xl gap-1 h-auto">
       <div
         onClick={() => navigate(`/itemdetails/${item.id}`)}
-        className="w-full h-[300px] relative rounded-2xl overflow-hidden"
+        className="w-full h-[250px] relative rounded-2xl overflow-hidden"
       >
         <img
           className="w-full h-[90%] object-cover"
           src={item.thumbnail}
           alt=""
         />
-        <h1 className="text-black">{item.brand}</h1>
+        <h1 className="text-black px-2">{item.brand}</h1>
         <span className="bg-red-400 absolute text-sm bottom-10 left-2 text-white px-2 py-1 text-center rounded-md">
           {item.category}
         </span>
@@ -31,18 +31,18 @@ const ProductsCards = ({ item }) => {
 
       <div
         onClick={() => navigate(`/itemdetails/${item.id}`)}
-        className="flex flex-col"
+        className="flex px-2 flex-col"
       >
         <h1 className="text-xl font-semibold">{item.title}</h1>
         <h1>{item.stock}</h1>
       </div>
-      <div className="flex gap-4 items-center">
+      <div className="flex gap-4 px-2 items-center">
         <h3>Price:</h3>
         <h1 className="text-xl font-semibold">
           {"₹"} {item.price * 81.97}
         </h1>
       </div>
-      <div className="">
+      <div className="px-2 pb-2">
         <button
           onClick={() => addtoCartItemes(item, item.id)}
           className="bg-yellow-500 font-semibold text-lg rounded-full text-white px-5 py-1 text-center"
