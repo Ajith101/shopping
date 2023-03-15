@@ -34,11 +34,11 @@ const CartProducts = ({ item }) => {
             alt=""
           />
         </div>
-        <div
-          onClick={() => navigate(`/itemdetails/${item.id}`)}
-          className="flex md:w-full w-[30%] flex-col justify-between"
-        >
-          <div className="inline-flex gap-3">
+        <div className="flex md:w-full w-[30%] flex-col justify-between">
+          <div
+            onClick={() => navigate(`/itemdetails/${item.id}`)}
+            className="inline-flex gap-3"
+          >
             {displayQTY} x<h1>{item.title}</h1>
           </div>
 
