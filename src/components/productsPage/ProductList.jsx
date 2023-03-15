@@ -13,7 +13,7 @@ const ProductList = () => {
   let [currentPage, setCurrentPage] = useState(1);
   let lastIndexOfpage = itemesPerPAge * currentPage;
   let firstIndexOfPage = lastIndexOfpage - itemesPerPAge;
-  const SplicedItemes = listOfItemes.splice(firstIndexOfPage, lastIndexOfpage);
+  const SplicedItemes = listOfItemes.slice(firstIndexOfPage, lastIndexOfpage);
   const displayItemes = SplicedItemes.map((itemes, id) => {
     return <ProductsCards item={itemes} key={id} />;
   });
@@ -38,8 +38,10 @@ const ProductList = () => {
     <>
       <Header />
       <nav className="flex py-28 flex-col justify-center items-center">
-        <div className="grid grid-cols-4 gap-5 w-[80%]">{displayItemes}</div>
-        <div className="flex my-10 justify-center items-center gap-3">
+        <div className="grid w-[96%] md:w-[90%] lg:w-[60%] gap-5 grid-cols-2 md:grid-cols-4">
+          {displayItemes}
+        </div>
+        <div className="flex flex-wrap my-10 justify-center items-center gap-3">
           {disolayPages}
         </div>
       </nav>

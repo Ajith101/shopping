@@ -1,17 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import { GoSearch } from "react-icons/go";
 import { BsFillCartCheckFill } from "react-icons/bs";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { HiMenuAlt1 } from "react-icons/hi";
+import MobileNav from "./MobileNav";
 
 const Header = () => {
+  const [mobMenu, setMobMenu] = useState(false);
+  const navigate = useNavigate();
   const { cartItemes } = useSelector((state) => state.cart);
   return (
-    <div className="bg-blue-500 px-10 flex justify-between items-center fixed z-50 text-white w-full py-7">
+    <div className="bg-blue-500 px-5 flex justify-between items-center fixed z-50 text-white w-full py-7">
       <div className="flex gap-4 justify-center items-center">
-        <NavLink to="/" className={({ isActive }) => (isActive ? "" : "")}>
-          <h1 className="text-3xl">Shopping App</h1>
-        </NavLink>
+        <div className="flex justify-center items-center gap-3">
+          <HiMenuAlt1
+            className="md:hidden"
+            onClick={() => setMobMenu(!mobMenu)}
+            size={"25px"}
+          />
+          <h1 onClick={() => navigate(`/`)} className="text-3xl">
+            Shopping App
+          </h1>
+        </div>
 
         <ul className="hidden md:flex md:justify-center md:gap-5 md:items-center md:text-lg">
           <li>
@@ -34,6 +45,7 @@ const Header = () => {
           <li>Promotions</li>
         </ul>
       </div>
+      {mobMenu ? <MobileNav setMobMenu={setMobMenu} /> : undefined}
       <div className="flex justify-center items-center gap-5">
         <div className="relative">
           <input
