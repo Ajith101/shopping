@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
-import { addToCart } from "../../features/cartSlice";
+import { AddQty, addToCart } from "../../features/cartSlice";
 import { AllProductsList } from "../../globalDatas/GlobalDatas";
 import Header from "../Header";
 
@@ -9,6 +9,11 @@ const ItemDetails = () => {
   const dispatch = useDispatch();
   const params = useParams();
   const { datass } = useContext(AllProductsList);
+
+  const addTocartItemes = (items) => {
+    dispatch(addToCart(items));
+    dispatch(AddQty({ qty: 1, id: items.id, price: items.price }));
+  };
 
   const filterItem = datass.filter((itemes) => {
     return itemes.id == params.id;
@@ -69,7 +74,7 @@ const ItemDetails = () => {
                 By Now
               </button>
               <button
-                onClick={() => dispatch(addToCart(item))}
+                onClick={() => addTocartItemes(item)}
                 className="text-xl md:text-2xl text-white rounded-lg bg-[#7700ff9c] px-5 py-2 text-center"
               >
                 Add To Cart

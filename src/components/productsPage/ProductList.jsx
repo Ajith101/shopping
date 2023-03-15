@@ -26,7 +26,9 @@ const ProductList = () => {
     return (
       <button
         onClick={() => setCurrentPage(itemesss)}
-        className="bg-green-600 p-2 rounded-md text-center text-white"
+        className={`p-2 rounded-md text-center text-white ${
+          currentPage === itemesss ? "bg-green-600" : "bg-red-600"
+        }`}
         key={id}
       >
         {itemesss}

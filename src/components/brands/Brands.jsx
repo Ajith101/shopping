@@ -1,8 +1,10 @@
 import React, { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { AllProductsList } from "../../globalDatas/GlobalDatas";
 import Header from "../Header";
 
 const Brands = () => {
+  const navigate = useNavigate();
   const { datass } = useContext(AllProductsList);
   const nameOfbrands = datass.map((item) => {
     return item.brand;
@@ -40,7 +42,11 @@ const Brands = () => {
 
   let displayBrand = slicedItemes.map((item, id) => {
     return (
-      <button key={id} className="border-[2px] px-3 py-1 text-center">
+      <button
+        onClick={() => navigate(`/brands/${item}`)}
+        key={id}
+        className="border-[2px] px-3 py-1 text-center"
+      >
         {item}
       </button>
     );
