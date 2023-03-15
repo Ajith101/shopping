@@ -14,17 +14,18 @@ const ProductsCards = ({ item }) => {
 
   return (
     <div className="bg-white rounded-2xl flex flex-col justify-between shadow-2xl gap-1 h-auto">
-      <div
-        onClick={() => navigate(`/itemdetails/${item.id}`)}
-        className="w-full h-[250px] relative rounded-2xl overflow-hidden"
-      >
+      <div className="w-full h-[250px] relative rounded-2xl overflow-hidden">
         <img
+          onClick={() => navigate(`/itemdetails/${item.id}`)}
           className="w-full h-[90%] object-cover"
           src={item.thumbnail}
           alt=""
         />
         <h1 className="text-black px-2">{item.brand}</h1>
-        <span className="bg-red-400 absolute text-sm bottom-10 left-2 text-white px-2 py-1 text-center rounded-md">
+        <span
+          onClick={() => navigate(`/category/${item.category}`)}
+          className="bg-red-400 cursor-pointer absolute text-sm bottom-10 left-2 text-white px-2 py-1 text-center rounded-md"
+        >
           {item.category}
         </span>
       </div>
@@ -39,7 +40,7 @@ const ProductsCards = ({ item }) => {
       <div className="flex gap-4 px-2 items-center">
         <h3>Price:</h3>
         <h1 className="text-xl font-semibold">
-          {"₹"} {item.price * 81.97}
+          {"₹"} {Math.ceil(item.price * 81.97)}
         </h1>
       </div>
       <div className="px-2 pb-2">

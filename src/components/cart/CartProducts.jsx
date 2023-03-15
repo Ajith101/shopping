@@ -44,7 +44,7 @@ const CartProducts = ({ item }) => {
 
           <div className="md:hidden lg:hidden flex flex-col justify-between">
             <h1>
-              {"₹"} {item.price * 81.97}
+              {"₹"} {Math.ceil(item.price * 81.97)}
             </h1>
             <span
               className="text-red-600 cursor-pointer"
@@ -78,7 +78,7 @@ const CartProducts = ({ item }) => {
       {/* <CiSquareRemove className="text-red-600" size={"25px"} /> */}
       <div className="hidden md:flex flex-col md:justify-between">
         <h1>
-          {"₹"} {item.price * 81.97}
+          {"₹"} {Math.ceil(item.price * 81.97)}
         </h1>
         <span
           className="text-red-600 cursor-pointer"

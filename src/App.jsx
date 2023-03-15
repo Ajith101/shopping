@@ -10,6 +10,8 @@ import { store } from "./store/store";
 import CategoryWise from "./components/categoryList/CategoryWise";
 import ItemDetails from "./components/productsCards/ItemDetails";
 import ProductList from "./components/productsPage/ProductList";
+import CateGoryMainList from "./components/categoryList/CateGoryMainList";
+import Brands from "./components/brands/Brands";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +33,14 @@ const router = createBrowserRouter([
   {
     path: "/productlist",
     element: <ProductList />,
+  },
+  {
+    path: "/categorylist",
+    element: <CateGoryMainList />,
+  },
+  {
+    path: "/brands",
+    element: <Brands />,
   },
 ]);
 

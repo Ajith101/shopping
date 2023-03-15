@@ -54,7 +54,7 @@ const ItemDetails = () => {
               <h2 className="text-xl md:text-2xl">MRP</h2>
               <h1 className="md:text-4xl text-2xl font-semibold md:font-bold">
                 {"₹  "}
-                {item.price * 81.97}
+                {Math.ceil(item.price * 81.97)}
               </h1>
             </div>
             <div className="flex flex-col gap-3">

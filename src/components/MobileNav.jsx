@@ -13,9 +13,9 @@ const MobileNav = ({ setMobMenu }) => {
       />{" "}
       <ul className="flex flex-col gap-4 text-xl">
         <li onClick={() => navigate(`/`)}>Home</li>
-        <li onClick={() => navigate(`/`)}>Category</li>
+        <li onClick={() => navigate(`/categorylist`)}>Category</li>
         <li onClick={() => navigate(`/productlist`)}>Products</li>
-        <li onClick={() => navigate(`/`)}>Brands</li>
+        <li onClick={() => navigate(`/brands`)}>Brands</li>
       </ul>
     </div>
   );

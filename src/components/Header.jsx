@@ -35,14 +35,28 @@ const Header = () => {
           </li>
           <li>
             <NavLink
+              to="/categorylist"
+              className={({ isActive }) => (isActive ? "underline" : "")}
+            >
+              Category
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
               to="/productlist"
               className={({ isActive }) => (isActive ? "underline" : "")}
             >
               Products
             </NavLink>
           </li>
-          <li>Brands</li>
-          <li>Promotions</li>
+          <li>
+            <NavLink
+              to="/brands"
+              className={({ isActive }) => (isActive ? "underline" : "")}
+            >
+              Brands
+            </NavLink>
+          </li>
         </ul>
       </div>
       {mobMenu ? <MobileNav setMobMenu={setMobMenu} /> : undefined}
