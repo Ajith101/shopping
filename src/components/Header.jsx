@@ -22,7 +22,14 @@ const Header = () => {
               Home
             </NavLink>
           </li>
-          <li>Products</li>
+          <li>
+            <NavLink
+              to="/productlist"
+              className={({ isActive }) => (isActive ? "underline" : "")}
+            >
+              Products
+            </NavLink>
+          </li>
           <li>Brands</li>
           <li>Promotions</li>
         </ul>
