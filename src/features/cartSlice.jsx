@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   cartItemes: [],
   qty: [],
+  wishList: [],
 };
 const cartSlice = createSlice({
   name: "cartManaging",
@@ -42,9 +43,25 @@ const cartSlice = createSlice({
           : item
       );
     },
+    addWishList: (state, action) => {
+      if (state.wishList.some((itemes) => itemes === action.payload)) {
+        return state;
+      }
+      return void (state.wishList = [...state.wishList, action.payload]);
+    },
+    removeWishList: (state, action) => {
+      state.wishList = state.wishList.filter((item) => item !== action.payload);
+    },
   },
 });
 
 export default cartSlice.reducer;
-export const { addToCart, removeFromCart, AddQty, increseQty, decreseQty } =
-  cartSlice.actions;
+export const {
+  addToCart,
+  removeFromCart,
+  AddQty,
+  increseQty,
+  decreseQty,
+  addWishList,
+  removeWishList,
+} = cartSlice.actions;
