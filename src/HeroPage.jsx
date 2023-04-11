@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import DiscoverProdutcts from "./components/DiscoverProdutcts";
 import ProductForYou from "./components/ProductForYou";
-import Testing from "./components/Testing";
 import { AllProductsList } from "./globalDatas/GlobalDatas";
 
 const HeroPage = () => {
