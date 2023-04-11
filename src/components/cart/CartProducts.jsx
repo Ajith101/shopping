@@ -17,6 +17,13 @@ const CartProducts = ({ item }) => {
       return items;
     }
   });
+
+  let newQty = [];
+
+  let displayOnlyQTy = qtyProducts.map((items, id) => {
+    newQty.push(items.qty);
+  });
+
   let displayQTY = qtyProducts.map((items, id) => {
     return <h1 key={id}>{items.qty}</h1>;
   });
@@ -59,7 +66,11 @@ const CartProducts = ({ item }) => {
       <div className="flex gap-3 justify-center">
         <div className="">
           <button
-            onClick={() => dispatch(decreseQty(item))}
+            onClick={() =>
+              newQty == 1
+                ? dispatch(removeFromCart(item))
+                : dispatch(decreseQty(item))
+            }
             className="rounded-full p-2 text-center bg-amber-300"
           >
             -

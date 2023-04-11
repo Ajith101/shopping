@@ -1,24 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { useEffect } from "react";
 
-const localCardData = () => {
-  let newcart = localStorage.getItem("cart");
-
-  if (newcart == "") {
-    return [];
-  } else {
-    return JSON.parse(newcart);
-  }
-};
-const localCardDataQty = () => {
-  let newcart = localStorage.getItem("qty");
-  if (newcart == []) {
-    return [];
-  } else {
-    return JSON.parse(newcart);
-  }
-};
-
 const initialState = {
   // cartItemes: localCardData(),
   cartItemes: localStorage.getItem("cart")
@@ -32,10 +14,6 @@ const initialState = {
     ? JSON.parse(localStorage.getItem("wish"))
     : [],
 };
-
-// useEffect(() => {
-//   localStorage.setItem("cart", JSON.stringify([initialState.cartItemes]));
-// }, [initialState.cartItemes]);
 
 const cartSlice = createSlice({
   name: "cartManaging",
@@ -76,7 +54,10 @@ const cartSlice = createSlice({
     decreseQty: (state, action) => {
       state.qty = state.qty.map((item) =>
         item.id === action.payload.id
-          ? { ...item, qty: item.qty === 1 ? 1 : item.qty - 1 }
+          ? {
+              ...item,
+              qty: item.qty - 1,
+            }
           : item
       );
       localStorage.setItem("qty", JSON.stringify([...state.qty]));
