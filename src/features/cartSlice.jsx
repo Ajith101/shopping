@@ -28,7 +28,9 @@ const initialState = {
   qty: localStorage.getItem("qty")
     ? JSON.parse(localStorage.getItem("qty"))
     : [],
-  wishList: [],
+  wishList: localStorage.getItem("wish")
+    ? JSON.parse(localStorage.getItem("wish"))
+    : [],
 };
 
 // useEffect(() => {
@@ -83,10 +85,12 @@ const cartSlice = createSlice({
       if (state.wishList.some((itemes) => itemes === action.payload)) {
         return state;
       }
-      return void (state.wishList = [...state.wishList, action.payload]);
+      return void ((state.wishList = [...state.wishList, action.payload]),
+      localStorage.setItem("wish", JSON.stringify([...state.wishList])));
     },
     removeWishList: (state, action) => {
       state.wishList = state.wishList.filter((item) => item !== action.payload);
+      localStorage.setItem("wish", JSON.stringify([...state.wishList]));
     },
   },
 });

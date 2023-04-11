@@ -14,13 +14,7 @@ import { AiOutlineLike, AiTwotoneLike } from "react-icons/ai";
 const ProductsCards = ({ item }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { wishList, cartItemes, qty } = useSelector((state) => state.cart);
-  // console.log(wishList);
-
-  // useEffect(() => {
-  //   localStorage.setItem("cart", JSON.stringify([...cartItemes]));
-  //   localStorage.setItem("qty", JSON.stringify([...qty]));
-  // }, [cartItemes]);
+  const { wishList, cartItemes } = useSelector((state) => state.cart);
 
   function addtoCartItemes(item, id) {
     dispatch(addToCart(item));
