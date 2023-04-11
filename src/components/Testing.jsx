@@ -1,22 +1,29 @@
 import React from "react";
+import "./Testin.css";
+import "swiper/css";
+import "swiper/css/grid";
+import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation } from "swiper";
+import { Grid, Pagination } from "swiper";
 
 const Testing = () => {
   return (
     <div>
       <Swiper
-        slidesPerView={1}
+        slidesPerView={2}
+        grid={{
+          rows: 2,
+        }}
         spaceBetween={30}
-        loop={true}
         pagination={{
           clickable: true,
         }}
-        navigation={true}
-        modules={[Pagination, Navigation]}
+        modules={[Grid, Pagination]}
         className=""
       >
-        <SwiperSlide>Slide 1</SwiperSlide>
+        <SwiperSlide>
+          <h1 className="me">Slide 1</h1>
+        </SwiperSlide>
         <SwiperSlide>Slide 2</SwiperSlide>
         <SwiperSlide>Slide 3</SwiperSlide>
         <SwiperSlide>Slide 4</SwiperSlide>

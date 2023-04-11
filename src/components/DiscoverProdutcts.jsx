@@ -1,7 +1,10 @@
 import React, { useContext } from "react";
 import { AllProductsList } from "../globalDatas/GlobalDatas";
 import CategoryNames from "./CategoryNames";
-import RoundProductCards from "./productsCards/RoundProductCards";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/scrollbar";
+import { Scrollbar } from "swiper";
 
 const DiscoverProdutcts = () => {
   const { datass } = useContext(AllProductsList);

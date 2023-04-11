@@ -37,7 +37,6 @@ const HeroPage = () => {
       </div>
       <DiscoverProdutcts />
       <ProductForYou />
-      {/* <Testing /> */}
     </section>
   );
 };
